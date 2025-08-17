@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("/static/images/img1.jpg");
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 1;
+      background-image: url("/static/images/img2.jpg");
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      font-size: 1rem;
+      max-width: 80%;
+    }
+
+    .right {
+      flex: 1;
+      background: white;
+      padding: 40px;
+    }
+
+    .right h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #00aaff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0077cc;
+    }
+
+    .top-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .top-links a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .top-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left, .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h2>Welcome Back</h2>
+      <p>Log in to access your personal notes and stay organized effortlessly.</p>
+    </div>
+    <div class="right">
+      <div class="top-links">
+        <a href="/login">Sign In</a>
+        <a href="/register">Register</a>
+      </div>
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" required autocomplete="off">
+
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" placeholder="********" required autocomplete="new-password">
+
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

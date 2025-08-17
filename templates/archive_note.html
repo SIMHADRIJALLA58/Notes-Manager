@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Archived</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+        .msg { font-size: 20px; color: green; }
+        a { display: block; margin-top: 20px; text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <p class="msg">✅ Your note has been archived successfully!</p>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <a href="{{ url_for('archive') }}">View Archived Notes</a>
+</body>
+</html>

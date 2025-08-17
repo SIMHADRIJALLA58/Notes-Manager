@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .note {
+            background-color: #fefefe;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .note-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .note-content {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('add_note') }}">Add Note</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</nav>
+
+<div class="container">
+    <h2>All Notes</h2>
+
+    {% if notes %}
+        {% for note in notes %}
+            <div class="note">
+                <div class="note-title">{{ note.title }}</div>
+                <div class="note-content">{{ note.content }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No notes found. <a href="{{ url_for('add_note') }}">Add one now</a>.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

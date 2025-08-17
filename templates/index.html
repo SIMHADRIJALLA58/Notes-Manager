@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Notes Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+    <div class="background-container d-flex align-items-center justify-content-center text-center text-white">
+        <div class="intro-box">
+            <h1 class="mb-3">Welcome to <br><span>Personal Notes Manager</span></h1>
+            <p class="mb-4"> Personal Notes Manager is your private space to write, edit, and organize thoughts.
+                With secure login, easy navigation, and clean design, it helps you stay focused and productive.
+                No distractions. Just your notes — safe and accessible..</p>
+            <div>
+                <a href="/register" class="btn btn-outline-light me-3 px-4">Register</a>
+                <a href="/login" class="btn btn-light px-4">Login</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
